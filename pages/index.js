@@ -12,7 +12,7 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full py-10 bg-red-100">
+    <div className="w-full py-10 bg-blue-100">
       <div>Hello</div>
       <button className="bg-blue-500 px-2 py-1 rounded" onClick={handleClick}>
         Click me
