@@ -4,9 +4,9 @@ export default function BooksPage() {
   return (
     <div className="bg-green-200">
       <div>Books page</div>
-      <a rel="stylesheet" href="/">
+      <Link rel="stylesheet" href="/">
         Go to the hompe page
-      </a>
+      </Link>
     </div>
   );
 }
