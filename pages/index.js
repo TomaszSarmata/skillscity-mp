@@ -1,5 +1,10 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Header from "@/components/shared/header";
+import Footer from "@/components/shared/footer";
+import Content from "@/components/shared/content";
+import Hero from "@/components/home/hero";
+import Topics from "@/components/home/topics";
 
 export default function Home() {
   const router = useRouter();
@@ -12,12 +17,29 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full py-10 bg-blue-100">
-      <div>Hello</div>
-      <button className="bg-blue-500 px-2 py-1 rounded" onClick={handleClick}>
-        Click me
-      </button>
-      <Link href="./books">Go to books page</Link>
+    <div className="w-full">
+      <Header name="Home"></Header>
+      <Hero
+        imgUrl="/assets/profile.png"
+        title="Tomasz Zajac"
+        subtitle="I am a bootcamp student"
+      ></Hero>
+
+      <Content>
+        <div className="w-full flex flex-col">
+          <Topics></Topics>
+          <div>
+            <button
+              className="bg-blue-500 px-2 py-1 rounded"
+              onClick={handleClick}
+            >
+              Click me
+            </button>
+          </div>
+        </div>
+      </Content>
+
+      <Footer title="Books Page" href="/books" />
     </div>
   );
 }
