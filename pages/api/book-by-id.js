@@ -14,18 +14,21 @@ export default function handler(req, res) {
       title: "The Hobbit",
       author: "J.R.R. Tolkien",
       imgUrl: "/assets/1.png",
+      linkToPurchase: "https://amzn.eu/d/3YRlJ3O",
     },
     {
       id: "2",
       title: "The Fellowship of the Ring",
       author: "J.R.R. Tolkien",
       imgUrl: "/assets/2.png",
+      linkToPurchase: "https://amzn.eu/d/1chHUk1",
     },
     {
       id: "3",
       title: "Born a Crime",
       author: "Trevor Noah",
       imgUrl: "/assets/3.png",
+      linkToPurchase: "https://amzn.eu/d/2oFkgvs",
     },
   ];
 
