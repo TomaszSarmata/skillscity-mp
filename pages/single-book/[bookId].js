@@ -13,7 +13,7 @@ export default function SingleBook() {
   const { bookId } = router.query; // so here we have managed to dynamically access the bookId that is coming from the api (from the query object of the router) so now we have to query that value in a dynamic way from our list of books to pass it on to our program so to navigate our user to the right single book page (that user accesses after clicking on the book).
   //to do that we have to go to our api books directory and assign id to each book in our list
 
-  //after assigning the id to each book we will then create another api endpoint as right not /books in our api returns to us the entire list of books. We are going to create another endpoint thaat returns just one book by searching through our array of books
+  //after assigning the id to each book we will then create another api endpoint as right now api/books returns to us the entire list of books. We are going to create another endpoint that returns just one book by searching through our array of books
 
   useEffect(() => {
     if (!bookId) return; //here is the safety net only. This hook will get fired only if there is  a book selected and never when the bookId doesn't exist. If the book id is not null and different than before, it will go and get the data for us
@@ -25,7 +25,7 @@ export default function SingleBook() {
     //id here is just an argument, we could call it xxx as well
     const response = await fetch(`/api/book-by-id?id=${id}`); //so here we are making the request to the api and now we have to pass the value of the id as a query parameter with the ?id={book.id} and through that fetch request we are getting our id that we are using in our function getBook as an argument. Further below we are just converting our data into json format
     const data = await response.json();
-    // so here inside the returned data we are going to have the value of book so we can access that trhough .notatin or destructure as below
+    // so here inside the returned data we are going to have the value of book so we can access that through .notatin or destructure as below
     const { book } = data;
     //now we want to persist the value of the book so we want to set it to some state so we don't loose the value on rerender
     setBook(book);
@@ -42,7 +42,7 @@ export default function SingleBook() {
       <Header name={book.title}></Header>
 
       <Hero
-        imgUrl={book.imgUrl}
+        img_url={book.img_url}
         title={book.title}
         subtitle={book.author}
       ></Hero>

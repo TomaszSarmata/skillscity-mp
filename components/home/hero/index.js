@@ -1,9 +1,9 @@
-export default function Hero({ imgUrl, title, subtitle }) {
+export default function Hero({ img_url, title, subtitle }) {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="w-full flex flex-row space-x-4 py-4">
         <div className="w-2/12 border-l-2 border-t-2 border-gray rounded-lg">
-          <img src={imgUrl} alt="Tomasz Zajac profile" className="rounded-lg" />
+          <img src={img_url} className="rounded-lg" />
         </div>
         <div className="w-10/12">
           <h1 className="text-4xl font-bold">{title}</h1>
