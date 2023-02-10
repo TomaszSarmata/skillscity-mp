@@ -20,7 +20,7 @@ export default function Home() {
     <div className="w-full">
       <Header name="Home"></Header>
       <Hero
-        imgUrl="/assets/profile.png"
+        img_url="/assets/profile.png"
         title="Tomasz Zajac"
         subtitle="I am a bootcamp student"
       ></Hero>

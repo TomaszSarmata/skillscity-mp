@@ -67,6 +67,7 @@ export default function SingleBook() {
       </Content>
 
       <Footer title="Next book" href={`/single-book/${+book.id + 1}`}></Footer>
+      <Footer title="Books Page" href="../books"></Footer>
     </div>
   );
 }
