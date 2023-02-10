@@ -2,11 +2,20 @@ import { useState } from "react";
 import Link from "next/link";
 
 export default function BookItem({ book }) {
-  const [likes, setLikes] = useState(0);
+  const [likes, setLikes] = useState(+book.likes); //before the default value was at 0. Now we want to pull the likes from the db to persist the data
 
-  const handleLike = () => {
+  const handleLike = async () => {
     const newValue = likes + 1;
-    setLikes(newValue);
+
+    // after adding the db we have to wire our component at the front with our api/increase likes so we have to turn this function into async
+    //first we have to grab the book.id
+    const id = +book.id; //as that's available from the param in line 4
+    setLikes(newValue); //we want to update the value here as a lazy updating in the background so that the user sees the results right after clicking
+    const response = await fetch(
+      `/api/increase-likes?id=${id}&likes=${newValue}`
+    );
+    //we can optionally await the data although we are not using it anywhere
+    const data = await response.json();
   };
 
   return (
