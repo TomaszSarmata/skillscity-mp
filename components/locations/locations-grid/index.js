@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import LocationItem from "./location-item";
 
 import { useState } from "react";
+import LikesProvider from "@/context/likes";
 
 export default function LocationsGrid() {
   const [locations, setLocations] = useState([]);
@@ -19,7 +20,9 @@ export default function LocationsGrid() {
   return (
     <div className="w-full gid grid grid-cols-3 gap-4">
       {locations.map((location, index) => (
-        <LocationItem key={index} location={location}></LocationItem>
+        <LikesProvider>
+          <LocationItem key={index} location={location}></LocationItem>
+        </LikesProvider>
       ))}
     </div>
   );
