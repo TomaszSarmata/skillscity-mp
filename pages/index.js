@@ -21,7 +21,7 @@ export default function Home() {
       <Header name="Home"></Header>
       <Hero
         img_url="/assets/profile.png"
-        title="Tomasz Zajac"
+        title="Tomasz"
         subtitle="I am a bootcamp student"
       ></Hero>
 
