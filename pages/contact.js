@@ -1,8 +1,9 @@
 import Content from "@/components/shared/content";
 import Footer from "@/components/shared/footer";
 import Header from "@/components/shared/header";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Input from "@/components/forms/input";
+import ListOfMessages from "@/components/contact/list-of-messages";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -10,12 +11,35 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [showSuccess, setShowSuccess] = useState(false);
 
+  const [messages, setMessages] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    getMessages();
+  }, []);
+
+  const getMessages = async () => {
+    setIsLoading(true);
+    const response = await fetch(`/api/contact-messages`);
+    const data = await response.json();
+
+    const { messages } = data;
+
+    setMessages(messages);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  };
+
   const handleChangeMessage = (e) => {
     const value = e.target.value;
     setMessage(value);
   };
 
   const handleSubmit = async (e) => {
+    if (!name) return;
+    if (!email) return;
+    if (!message) return;
     const response = await fetch(
       `/api/contact?name=${name}&email=${email}&message=${message}`
     );
@@ -63,6 +87,11 @@ export default function Contact() {
             <p className="text-green-500 w-96">Your message was sent</p>
           ) : null}
         </form>
+
+        <ListOfMessages
+          isLoading={isLoading}
+          messages={messages}
+        ></ListOfMessages>
       </Content>
       <Footer title="Home Page" href="/"></Footer>
     </div>
