@@ -49,6 +49,7 @@ export default function Contact() {
     setEmail("");
     setMessage("");
     setShowSuccess(true);
+    getMessages();
   };
 
   return (
