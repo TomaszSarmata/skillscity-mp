@@ -7,7 +7,7 @@ export default function Input(props) {
     <div>
       <input
         {...props}
-        className="border-2 w-96 bg-gray-200 py-3 px-6 rounded"
+        className="border-2 w-full bg-gray-200 py-3 px-6 rounded"
         onChange={handleChange}
       />
     </div>
