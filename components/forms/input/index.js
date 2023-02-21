@@ -4,12 +4,10 @@ export default function Input(props) {
     props.onChange(value);
   };
   return (
-    <div>
-      <input
-        {...props}
-        className="border-2 w-full bg-gray-200 py-3 px-6 rounded"
-        onChange={handleChange}
-      />
-    </div>
+    <input
+      {...props}
+      className="border-2 w-full bg-gray-200 py-3 px-6 rounded"
+      onChange={handleChange}
+    />
   );
 }
