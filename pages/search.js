@@ -3,6 +3,7 @@ import Header from "@/components/shared/header";
 import Footer from "@/components/shared/footer";
 import Input from "@/components/forms/input";
 import { useEffect, useState } from "react";
+import LocationItem from "@/components/search/location-item";
 
 export default function Search() {
   const [locations, setLocations] = useState([]);
@@ -38,11 +39,9 @@ export default function Search() {
         </div>
 
         <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10">
-          {locations.map((location) => {
-            return (
-              <div key={location.id} className="w-full h-40 bg-red-100"></div>
-            );
-          })}
+          {locations.map((location) => (
+            <LocationItem key={location.id} location={location}></LocationItem>
+          ))}
         </div>
       </Content>
       <Footer href="/" title="Home"></Footer>
