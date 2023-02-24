@@ -45,6 +45,7 @@ export default function Home() {
         buttons={[
           { title: "Locations", href: "/locations" },
           { title: "Books", href: "/books" },
+          { title: "Contact", href: "/contact" },
         ]}
       />
     </div>

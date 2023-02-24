@@ -4,6 +4,7 @@ import Header from "@/components/shared/header";
 import { useState, useEffect } from "react";
 import Input from "@/components/forms/input";
 import ListOfMessages from "@/components/contact/list-of-messages";
+import FooterButton from "@/components/shared/footer/footer-button";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -106,7 +107,7 @@ export default function Contact() {
           messages={messages}
         ></ListOfMessages>
       </Content>
-      <Footer title="Home Page" href="/"></Footer>
+      <Footer buttons={[{ title: "Homepage", href: "/" }]}></Footer>
     </div>
   );
 }
