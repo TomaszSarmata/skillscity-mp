@@ -40,8 +40,6 @@ export default function Home() {
       </Content>
 
       <Footer
-        title="Books Page"
-        href="/books"
         buttons={[
           { title: "Locations", href: "/locations" },
           { title: "Books", href: "/books" },
