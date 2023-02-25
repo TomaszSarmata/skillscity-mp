@@ -105,6 +105,7 @@ export default function Contact() {
         <ListOfMessages
           isLoading={isLoading}
           messages={messages}
+          onDelete={getMessages}
         ></ListOfMessages>
       </Content>
       <Footer buttons={[{ title: "Homepage", href: "/" }]}></Footer>
